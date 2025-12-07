@@ -1,0 +1,17 @@
+# To create a new Alembic migration:
+docker exec -it fastapi-base-template-api-1 alembic revision --autogenerate -m "---Migration commit message---"
+
+# To apply all pending migrations:
+docker exec -it fastapi-base-template-api-1 alembic upgrade head
+
+# Show the current database migration version:
+docker exec -it fastapi-base-template-api-1 alembic current
+
+# Show full migration history:
+docker exec -it fastapi-base-template-api-1 alembic history
+
+# Show details of the latest migration:
+docker exec -it fastapi-base-template-api-1 alembic show head
+
+# To rollback the last migration:
+docker exec -it fastapi-base-template-api-1 alembic downgrade -1
